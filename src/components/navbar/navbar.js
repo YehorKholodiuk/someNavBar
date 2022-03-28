@@ -5,12 +5,14 @@ function Navbar() {
         <div className="navbar">
             <h1>Navbar</h1>
             <ul>
-                <li><NavLink exact to="/">Home</NavLink></li>
-                <li><NavLink to="/contact">Contact</NavLink></li>
-                <li><NavLink to="/about">About</NavLink></li>
+                <li><NavLink exact to="/Home">Home</NavLink></li>
+                <li><NavLink to="/Contact">Contact</NavLink></li>
+                <li><NavLink to="/About">About</NavLink></li>
+                <li><NavLink to="/profile/percybolmer">Profile</NavLink></li>
             </ul>
         </div>
     )
 }
 
 export default Navbar;
+
