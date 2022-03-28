@@ -1,14 +1,27 @@
-import  { NavLink } from "react-router-dom";
+import  { NavLink , useHistory,useNavigate} from "react-router-dom";
 
 function Navbar() {
+
+    const navigate = useNavigate();
+
+    const goHome = (e) => {
+        navigate.push('/')
+    }
+
+
+
+
     return (
         <div className="navbar">
-            <h1>Navbar</h1>
+            <button type="button" onClick={goHome}><h1>Go Home</h1></button>
             <ul>
-                <li><NavLink exact to="/Home">Home</NavLink></li>
-                <li><NavLink to="/Contact">Contact</NavLink></li>
-                <li><NavLink to="/About">About</NavLink></li>
-                <li><NavLink to="/profile/percybolmer">Profile</NavLink></li>
+                <li><NavLink exact to="/">Home</NavLink></li>
+                <li><NavLink to="/contact">Contact</NavLink></li>
+                <li><NavLink to="/about">About</NavLink></li>
+                <li><NavLink to={{
+                    pathname: "/profile/percybolmer",
+                    state: { registrationdate: "2021-07-07" },
+                }}>Profile</NavLink></li>
             </ul>
         </div>
     )

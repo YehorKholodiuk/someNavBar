@@ -1,5 +1,5 @@
 import Navbar from '../components/navbar/navbar'
-import  { HashRouter, Switch, Route, Routes } from "react-router-dom";
+import  { Switch, Route, Routes } from "react-router-dom";
 import Home from '../components/home/Home'
 import Contact from '../components/contact/Contact'
 import About from '../components/about/About'
@@ -7,21 +7,23 @@ import Profile from '../components/user/profile'
 function Main() {
     return (
         <div>
-            <HashRouter>
-                <Navbar></Navbar>
-                <div className="content">
 
-                    <Routes>
-                        <Route exact path="/Home" component={Home}/>
-                        <Route path="/Contact" component={Contact}/>
-                        <Route path="/About" component={About}/>
+            <Navbar></Navbar>
+            <div className="content">
 
-                        <Route path="/profile/:username" component={Profile}/>
-                    </Routes>
-                </div>
-            </HashRouter>
+                <Routes>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/contact" component={Contact}/>
+                    <Route path="/about" component={About}/>
+
+                    <Route path="/profile/:username" component={Profile}/>
+                </Routes>
+            </div>
+
         </div>
     )
 }
 
 export default Main;
+
+
